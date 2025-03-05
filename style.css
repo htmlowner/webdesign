@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'unisans b'; 
-    src: url('../font/UniSans-Trial-Bold.otf');
+    src: url('./font/UniSans-Trial-Bold.otf');
 }
 
 * {
