@@ -20,7 +20,7 @@ function login() {
 
     if (users[username] && users[username] === password) {
         localStorage.setItem('username', username);
-        window.location.href = '../pages/mainPage.html';
+        window.location.href = 'https://htmlowner.github.io/webdesign/pages/mainPage.html';
     } else {
         alert('Неверное имя пользователя или пароль!');
     }
