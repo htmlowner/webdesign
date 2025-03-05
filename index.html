@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/catsPaw.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="authWindow">
+        <h1 class="authorization">Авторизируйтесь в системе</h1>
+        <input type="text" placeholder="Username" class="username" id="username">
+        <input type="password" placeholder="Password" class="password" id="password">
+        <button class="login" onclick="login()">ВОЙТИ</button>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()"><img src="../img/theme.png" class="themeIcon"></button>
+    <script src="./scripts/themeSwitch.js"></script>
+    <script src="./scripts/login.js"></script>
+</body>
+</html>

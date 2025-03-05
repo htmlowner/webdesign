@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../styles/mainStyle.css">
+    <link rel="icon" href="../img/catsPaw.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="menu">
+        <button class="pagesOn" onclick="location.href='./mainPage.html';">
+            <img src="../img/cat.png" class="pagesButtonImg">
+            <h1 class="pagesButtonText">Главная</h1>
+        </button>
+        <button class="pages" onclick="location.href='./bookingsPage.html';">
+            <img src="../img/bookings.png" class="pagesButtonImg">
+            <h1 class="pagesButtonText">Бронирования</h1>
+        </button>
+        <button class="pages" onclick="location.href='./reportsPage.html';">
+            <img src="../img/reports.png" class="pagesButtonImg">
+            <h1 class="pagesButtonText">Отчеты</h1>
+        </button>
+        <button class="pages" onclick="location.href='./supportPage.html';">
+            <img src="../img/support.png" class="pagesButtonImg">
+            <h1 class="pagesButtonText">Поддержка</h1>
+        </button>
+        <div class="clear"></div>
+        <button class="start" onclick="openModal()">
+            <h1>НАЧАТЬ</h1>
+        </button>
+    </div>
+    <div class="content">
+        <button class="finish" onclick="location.href='../index.html';">
+            <h1>Выйти</h1>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()"><img src="../img/theme.png" class="themeIcon"></button>
+        <h1 class="contentText">Главная</h1>
+        <h2 class="contentTextSec">Сегодня</h2>
+        <div class="mainWindow">
+            <div class="header">
+                <div class="column">Время</div>
+                <div class="column">Гость</div>
+                <div class="column">Статус</div>
+                <div class="column">Сумма</div>
+            </div>
+            <div class="contents"></div>
+        </div>        
+    </div>
+    <div id="bookingModal" class="modal">
+        <div class="modalContent">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <h2 class="modalH2">Форма бронирования</h2>
+            
+            <label for="checkinTime">Время заселения:</label>
+            <input type="time" id="checkinTime" required>
+
+            <label for="guest">ФИО:</label>
+            <input type="text" id="guest" placeholder="Введите ФИО клиента" required>
+
+            <label for="checkin">Дата заселения:</label>
+            <input type="date" id="checkin" onchange="calculateCheckout()" required>
+    
+            <label for="duration">Количество дней:</label>
+            <input type="number" id="duration" min="1" value="1" onchange="calculateCheckout(); calculateTotal()" required>
+    
+            <label for="checkout">Дата выезда:</label>
+            <input type="date" id="checkout" readonly>
+    
+            <label for="roomType">Тип номера:</label>
+            <select id="roomType" onchange="calculateTotal()">
+                <option value="Эконом">Эконом</option>
+                <option value="Комфорт">Комфорт</option>
+                <option value="Люкс">Люкс</option>
+            </select>
+    
+            <label for="paymentStatus">Статус оплаты:</label>
+            <select id="paymentStatus">
+                <option value="Оплачено">Оплачено</option>
+                <option value="Неоплачено">Не оплачено</option>
+            </select>
+    
+            <label for="totalCost">Общая стоимость:</label>
+            <input type="text" id="totalCost" readonly>
+    
+            <button class="bkng" onclick="submitBooking()">Забронировать</button>
+        </div>
+    </div>
+    <script src="../scripts/bookingWindow.js"></script>
+    <script src="../scripts/themeSwitch.js"></script>
+    <script src="../scripts/mainWindow.js"></script>
+</body>
+</html>
