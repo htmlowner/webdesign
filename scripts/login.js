@@ -1,6 +1,6 @@
 let users = {};
 
-fetch('../config/users.json')
+fetch('..webdsign/config/users.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Сеть не в порядке: ' + response.statusText);
