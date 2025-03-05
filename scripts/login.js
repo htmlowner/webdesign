@@ -1,6 +1,6 @@
 let users = {};
 
-fetch('https://htmlowner.github.io/webdesign/config/users.json')
+fetch('https://raw.githubusercontent.com/htmlowner/webdesign/main/config/users.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Сеть не в порядке: ' + response.statusText);
